@@ -8,6 +8,7 @@
 </p>
 
 ## Imagem do laravel : https://hub.docker.com/repository/docker/robsoni/laravel
+## Imagem Go menor que 2MB : https://hub.docker.com/repository/docker/robsoni/codeeducation
 
 ## About Laravel
 
