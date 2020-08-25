@@ -37,3 +37,7 @@ ENTRYPOINT ["/main"]
 
 # docker build . -t robsoni/golang-optimized-web
 # docker run -d -p 3000:3000 robsoni/golang-optimized-web
+# Fontes:
+# https://levelup.gitconnected.com/complete-guide-to-create-docker-container-for-your-golang-application-80f3fb59a15e#--responses
+# https://www.digitalocean.com/community/tutorials/using-ldflags-to-set-version-information-for-go-applications-pt#:~:text=Usando%20ldflags%20com%20o%20go%20build,-Assim%20como%20mencionado
+# https://golang.org/cmd/link/
