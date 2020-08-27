@@ -50,7 +50,3 @@ steps:
         "-c",
         "/var/www/phpunit.xml",
       ]
-
-  - id: "Rodando php-fpm"
-    name: "gcr.io/cloud-builders/docker"
-    args: ["exec", "-t", "app", "php-fpm"]
