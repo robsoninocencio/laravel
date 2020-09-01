@@ -11,9 +11,6 @@ RUN chmod -R g+w /var/www/
 
 RUN usermod -u 1000 www-data
 
-# Add users to group www-data
-RUN usermod -aG 1000 www-data
-
 WORKDIR /var/www
 RUN rm -rf /var/www/html
 
