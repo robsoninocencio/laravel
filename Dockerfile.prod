@@ -9,13 +9,10 @@ RUN usermod -u 1000 www-data
 RUN chown -R www-data:www-data /var/www/
 RUN chmod -R g+w /var/www/
 
-# Add users to group www-data
-RUN usermod -aG 501  www-data
-RUN usermod -aG 1000 www-data
-RUN usermod -aG 1001 www-data
-RUN usermod -aG 1002 www-data
-
 RUN usermod -u 1000 www-data
+
+# Add users to group www-data
+RUN usermod -aG 1000 www-data
 
 WORKDIR /var/www
 RUN rm -rf /var/www/html
