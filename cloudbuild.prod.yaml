@@ -11,6 +11,15 @@ steps:
         "chown", "-R", "www-data:www-data", "/var/www",
       ]
 
+
+  - id: "Chown in /usr/share/nginx/html"
+    name: "gcr.io/cloud-builders/docker"
+    args:
+      [
+        "exec", "-u", "root", "-t", "app",
+        "chown", "-R", "www-data:www-data", "/usr/share/nginx/html",
+      ]
+
   - id: "Rodando composer"
     name: "gcr.io/cloud-builders/docker"
     args: ["exec", "-t", "app", "composer", "install"]
