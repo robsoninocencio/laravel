@@ -1,7 +1,19 @@
 FROM php:7.3.6-fpm-alpine3.9 as builder
 
-RUN apk add --no-cache shadow openssl bash mysql-client nodejs npm
+RUN apk add --no-cache shadow openssl bash mysql-client
 RUN docker-php-ext-install pdo pdo_mysql
+
+RUN usermod -u 1000 www-data
+
+# Set www-data as owner for /var/www
+RUN chown -R www-data:www-data /var/www/
+RUN chmod -R g+w /var/www/
+
+# Add users to group www-data
+RUN usermod -aG 501  www-data
+RUN usermod -aG 1000 www-data
+RUN usermod -aG 1001 www-data
+RUN usermod -aG 1002 www-data
 
 RUN usermod -u 1000 www-data
 
