@@ -38,3 +38,12 @@ steps:
         "exec", "-t", "app",
         "php", "/var/www/vendor/bin/phpunit", "-c", "/var/www/phpunit.xml",
       ]
+
+  - id: "Building image from Dockerfile.prod"
+    name: "gcr.io/cloud-builders/docker"
+    args: ["build", "-t", "gcr.io/$PROJECT_ID/app-laravel:$SHORT_SHA", "-f", "Dockerfile.prod", "."]
+
+  - id: "Pushing image"
+    name: "gcr.io/cloud-builders/docker"
+    args: ["push", "gcr.io/$PROJECT_ID/app-laravel:$SHORT_SHA"]
+  

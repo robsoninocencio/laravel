@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: mysql-deployment
+spec:
+    selector:
+        matchLabels:
+          app: mysql-selector
+          tier: db
+    replicas: 1
+    template:
+        metadata:
+            labels:
+              app: mysql-selector
+              tier: db
+        spec:
+            containers:
+            - image: mysql:5.7
+              name: mysql-container
+              args:
+                - "--ignore-db-dir=lost+found"
+
+              env:
+              - name: MYSQL_ROOT_PASSWORD
+                valueFrom:         #kubectl create secret generic mysql-pass --from-literal=password='a1s2d3f4'
+                  secretKeyRef:
+                    name: mysql-pass
+                    key: password
+
+              ports:
+              - containerPort: 3306
+
+              volumeMounts:
+              - name: mysql-persistent-storage
+                mountPath: /var/lib/mysql
+
+            volumes:
+              - name: mysql-persistent-storage
+                persistentVolumeClaim:
+                  claimName: mysql-pv-claim
