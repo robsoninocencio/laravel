@@ -13,15 +13,15 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 RUN usermod -u 1000 www-data
 
 WORKDIR /var/www
-
 RUN rm -rf /var/www/html
 
-RUN ln -s public html
-
+# COPY . /var/www
 # RUN composer install && \
 #     cp .env.example .env && \
 #     php artisan key:generate && \
 #     php aritsan config:cache
+
+RUN ln -s public html
 
 USER www-data
 
