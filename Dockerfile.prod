@@ -3,7 +3,10 @@ FROM php:7.3.6-fpm-alpine3.9 as builder
 RUN apk add --no-cache shadow openssl bash mysql-client
 RUN docker-php-ext-install pdo pdo_mysql
 
-RUN usermod -u 1000 www-data && groupmod -g 1000 www-data
+#RUN usermod -u 1000 www-data && groupmod -g 1000 www-data
+
+RUN usermod -u 1000 www-data && \
+    usermod -a -G www-data,users www-data
 
 WORKDIR /var/www
 RUN rm -rf /var/www/html
