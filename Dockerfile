@@ -10,19 +10,13 @@ RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSI
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-RUN usermod -u 1000 www-data
+# RUN usermod -u 1000 www-data
 
 WORKDIR /var/www
 RUN rm -rf /var/www/html
 
-# COPY . /var/www
-# RUN composer install && \
-#     cp .env.example .env && \
-#     php artisan key:generate && \
-#     php aritsan config:cache
-
 RUN ln -s public html
 
-USER www-data
+# USER www-data
 
 EXPOSE 9000
