@@ -18,7 +18,7 @@ spec:
             - name: app
               image: img-app-deployment
               imagePullPolicy: Always
-              command: ["/bin/sh", "-c", "ln -s /var/wwww /usr/share/nginx; php-fpm;"]
+              command: ["/bin/sh", "-c", "ln -s /var/wwww /usr/share/nginx; /var/www/k8s/entrypoint.sh; php-fpm;"]
               ports:
               - containerPort: 80
 
