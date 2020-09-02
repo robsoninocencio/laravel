@@ -9,7 +9,7 @@ services:
       - _DB_HOST=db
       - _DB_DATABASE=laravel
       - _DB_USERNAME=root
-      - _DB_PASSWORD=root
+      - _DB_PASSWORD=a1s2d3f4
       - _HOST=app
       - _PORTA=9000
     volumes:
