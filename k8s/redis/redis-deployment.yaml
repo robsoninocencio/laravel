@@ -12,14 +12,14 @@ spec:
     template:
         metadata:
             labels:
-                app: redis
-                role: master
+              app: redis
+              role: master
         spec:
             containers:
-                - name: master
-                  image: redis
-                  ports:
-                  - containerPort: 6379
+            - name: master
+              image: redis
+              ports:
+              - containerPort: 6379
 
 ---
 
@@ -28,12 +28,12 @@ kind: Service
 metadata:
     name: redis-service
     labels: 
-        app: redis-service
-        role: master
+      app: redis-service
+      role: master
 spec:
     ports:
     - port: 6379
       targetPort: 6379
     selector:
-        app: redis
-        role: master
+      app: redis
+      role: master
