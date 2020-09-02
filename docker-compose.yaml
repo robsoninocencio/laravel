@@ -46,8 +46,8 @@ services:
       - ./.docker/mysql/dbdata:/var/lib/mysql
     environment:
       - MYSQL_DATABASE=laravel
-      - MYSQL_ROOT_PASSWORD=root
       - MYSQL_USER=root
+      - MYSQL_ROOT_PASSWORD=a1s2d3f4
     networks:
       - app-network
 
@@ -62,3 +62,7 @@ services:
 networks:
   app-network:
     driver: bridge
+
+# docker-compose up -d
+# docker-compose up -d --build
+# docker exec -u root -it app bash
