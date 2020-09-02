@@ -33,4 +33,4 @@ RUN rm -rf /var/www/html
 COPY --from=builder /var/www .
 
 EXPOSE 9000
-ENTRYPOINT ["php-fpm"]
+# ENTRYPOINT ["php-fpm"]
