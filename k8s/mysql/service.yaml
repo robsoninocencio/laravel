@@ -8,6 +8,6 @@ spec:
     ports:
       - port: 3306
     selector:
-      app: mysql-deployment
+      app: mysql-server
       tier: db
     clusterIP: None
