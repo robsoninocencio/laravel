@@ -54,3 +54,11 @@ services:
 networks:
   app-network:
     driver: bridge
+
+# kubectl apply -f k8s/app
+# kubectl apply -f k8s/mysql
+# kubectl apply -f k8s/nginx
+# kubectl apply -f k8s/redis
+# kubectl get pods
+# kubectl exec -it app-558bd8887b-p7lfv bash
+# mysql -uroot -hmysql-service -p     # a1s2d3f4
