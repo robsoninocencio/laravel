@@ -9,7 +9,7 @@ data:
             listen 80;
             index index.php index.html;
             # root /usr/share/nginx/html;
-            root /var/wwww/public;
+            root /var/www/public;
 
             location ~ \.php$ {
                 try_files $uri = 404;
