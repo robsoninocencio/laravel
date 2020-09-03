@@ -6,7 +6,7 @@ metadata:
         name: app-conf
 data:
     env: |
-        APP_NAME=docker-laravel
+        APP_NAME=Laravel
         APP_ENV=local
         APP_KEY=base64:0jEnvZSNZQwJXZaOeYuy+2ZcS+4c5j5Lyugzc9kn8AE=
         APP_DEBUG=true
