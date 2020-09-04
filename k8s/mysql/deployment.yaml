@@ -15,7 +15,7 @@ spec:                            # spec do deployment
               tier: db
         spec:                    # spec do pod
             containers:
-            - image: mysql:5.7
+            - build: .docker/mysql
               name: mysql-server
               args:
                 - "--ignore-db-dir=lost+found"
