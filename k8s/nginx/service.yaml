@@ -8,3 +8,5 @@ spec:
     - port: 80
     selector:
       app: nginx
+
+    #   kubectl apply -f k8s/nginx/service.yaml
