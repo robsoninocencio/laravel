@@ -26,4 +26,4 @@ RUN composer install \
 RUN chown -R www-data:www-data /var/www
 USER www-data
 EXPOSE 9000
-ENTRYPOINT ["php-fpm"]
+# ENTRYPOINT ["php-fpm"]
