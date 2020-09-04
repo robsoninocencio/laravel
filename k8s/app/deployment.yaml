@@ -17,7 +17,9 @@ spec:
             - name: app
               # image: gcr.io/codeeducation-287605/app-laravel:edd9a39
               image: img-app-deployment
-              command: ["/bin/sh", "-c", "ln -s /var/wwww /usr/share/nginx; chmod +x /var/www/k8s/entrypoint.sh; php-fpm;"]
+              command: ["/bin/sh", 
+                        "-c", 
+                        "ln -s /var/wwww /usr/share/nginx; chmod +x /var/www/k8s/entrypoint.sh; /var/www/k8s/entrypoint.sh; php-fpm;"]
               # command: ["/bin/sh", "-c", "/var/www/k8s/entrypoint.sh; php-fpm;"]
               ports:
               - containerPort: 80
